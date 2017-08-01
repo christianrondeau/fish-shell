@@ -146,7 +146,7 @@ static wcstring get_runtime_path() {
             return result;
         }
         // /tmp/fish.user
-        std::string tmpdir = "/tmp/fish.";
+        std::string tmpdir = "/data/data/com.termux/files/home/tmp/fish-dev.";
         tmpdir.append(uname);
         if (check_runtime_path(tmpdir.c_str()) != 0) {
             debug(0, L"Runtime path not available.");

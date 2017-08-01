@@ -290,7 +290,7 @@ static inline void safe_append(char *buffer, const char *s, size_t buffsize) {
 // have to grub through sys_nerr and sys_errlist directly On GNU toolchain, this will produce a
 // deprecation warning from the linker (!!), which appears impossible to suppress!
 const char *safe_strerror(int err) {
-#if defined(__UCLIBC__)
+#if defined(__UCLIBC__) || defined(__ANDROID__)
     // uClibc does not have sys_errlist, however, its strerror is believed to be async-safe.
     // See issue #808.
     return strerror(err);

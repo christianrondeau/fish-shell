@@ -340,6 +340,7 @@ static int fish_parse_opt(int argc, char **argv, fish_cmd_opts_t *opts) {
 }
 
 int main(int argc, char **argv) {
+    if (getenv("TMPDIR") == NULL) putenv("TMPDIR=@TERMUX_PREFIX@/tmp");
     int res = 1;
     int my_optind = 0;
 

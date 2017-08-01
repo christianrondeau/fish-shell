@@ -444,7 +444,7 @@ static void populate_option_strings(
 
         if (!opt_spec->long_flag.empty()) {
             long_options.get()[i++] = {opt_spec->long_flag.c_str(), arg_type, NULL,
-                                       opt_spec->short_flag};
+                                       static_cast<int>(opt_spec->short_flag)};
         }
     }
     long_options.get()[i] = {NULL, 0, NULL, 0};
